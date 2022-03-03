@@ -6,7 +6,8 @@ const multiply=require('./multiply.js');
 
 
 
- add();
+add();
+
  substract();
  multiply();
  divide();
