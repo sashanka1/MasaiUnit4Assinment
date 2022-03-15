@@ -25,8 +25,9 @@ const bookschema=mongoose.Schema(
     {
         bookName:{type:String,require:true},
         body:{type:String,require:true},
-        otherId:{type:mongoose.Schema.Types.ObjectId,ref:"author"},
-        otherId:{type:mongoose.Schema.Types.ObjectId,ref:"author"},
+        outhorId:{type:mongoose.Schema.Types.ObjectId,ref:"author"},
+        outhor2Id:{type:mongoose.Schema.Types.ObjectId,ref:"author"},
+        sectionId:{type:mongoose.Schema.Types.ObjectId,ref:"Section"}
     }
 );
 
@@ -43,7 +44,7 @@ const Author=mongoose.model("author",authorScima);
 
 
 
-
+app.get("/books")
 
 
 app.listen(6001,async()=>{
