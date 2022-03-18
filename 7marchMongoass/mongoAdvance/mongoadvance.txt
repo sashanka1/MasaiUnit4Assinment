@@ -1,0 +1,45 @@
+
+
+
+   db.movies.find({movie_name:{$not:{$eq:"Child of God"}}},{movie_name:1,production_year:1,_id:0}) 
+
+  { "movie_name" : "Bewitched (Alter Ego)", "production_year" : 1996 }   
+                             { "movie_name" : "Blood of Dracula", "production_year" : 2012 }  
+                                   { "movie_name" : "Aziz Ansari: Dangerously Delicious", "production_year" : 2009 }
+                   { "movie_name" : "Professional, The (Le professionnel)", "production_year" : 2014 } 
+                { "movie_name" : "The Care Bears Adventure in Wonderland", "production_year" : 2000 }
+               { "movie_name" : "Three Coins in the Fountain", "production_year" : 1991 } 
+                         { "movie_name" : "All This, and Heaven Too", "production_year" : 1997 } 
+                            { "movie_name" : "Great Ecstasy of Robert Carmichael, The", "production_year" : 1996 } 
+             { "movie_name" : "Holy Guests (Ha-Ushpizin)", "production_year" : 1997 } 
+                           { "movie_name" : "Osmosis (Osmose)", "production_year" : 1999 }   
+                                  { "movie_name" : "Torch Song", "production_year" : 2020 }  
+                                         { "movie_name" : "Deadly Trap, The (La maison sous les arbres)", "production_year" : 1997 }
+  
+       { "movie_name" : "Frankenstein Unbound", "production_year" : 2000 }  
+                               { "movie_name" : "Brighton Beach Memoirs", "production_year" : 1993 } 
+                              { "movie_name" : "That Lady in Ermine", "production_year" : 1990 } 
+                                 { "movie_name" : "Caller, The", "production_year" : 2001 }  
+                                        { "movie_name" : "Curse of the Golden Flower (Man cheng jin dai huang jin jia)", "production_year" : 2009 }  
+                                                                                           { "movie_name" : "My Best Enemy (Mi mejor enemigo)", "production_year" : 2019 } 
+                    { "movie_name" : "We the Party", "production_year" : 1992 } 
+                                        { "movie_name" : "Best of the Badmen", "production_year" : 2017 } 
+                                  Type "it" for more  
+
+
+db.movies.find({budget:{$gte:1600.71}},{movie_name:1,production_year:1,_id:0})  
+
+ db.movies.find({budget:{$gte:1600.71}},{movie_name:1,production_year:1,_id:0})
+db.movies.find({$and:[{production_year:{$gte:2000}},{budget:{$gte:10000}}]},{movie_name:1,production_year:1,_id:0}) 
+db.movies.find({$or:[{production_year:{$gte:2000}},{budget:{$gte:10000}}]},{movie_name:1,production_year:1,_id:0})
+
+
+db.movies.find({$nor:[{production_year:{$gt:2000}},{budget:{$gt:10000}}]},{movie_name:1,production_year:1,_id:0})
+db.movies.find({$or:[{production_year:{$not:{$eq:2000}}},{budget:{$not:{$eq:10000}}}]},{movie_name:1,production_year:1,_id:0})
+db.movies.find({$and:[{production_year:{$gte:2000}},{production_year:{$lte:2010}}]},{movie_name:1,production_year:1,_id:0}) 
+db.movie.find({}).sort({production_year:-1,movie_name:-1}).skip(10).limit(5).pretty()
+
+
+
+
+
