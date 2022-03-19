@@ -83,6 +83,62 @@ app.post("/book",async(req,res)=>{
    
 })
 
+app.get("/book",async(req,res)=>{
+    try {
+       // var query = req.params.query;
+        const book =await Books.find({outhorId:"6235f1637bd533bd055b5466"});
+        return res.send(book);
+    } catch (error) {
+        return res.status(500).send({message:error.message})
+    }
+})
+
+app.get("/bookwith",async(req,res)=>{
+    try {
+       // var query = req.params.query;
+        const book =await Books.find({sectionId:"6234d54e94413d7403299608"});
+        return res.send(book);
+    } catch (error) {
+        return res.status(500).send({message:error.message})
+    }
+})
+
+app.get("/bookNchout",async(req,res)=>{
+    try {
+       // var query = req.params.query;
+        const book =await Books.find({checkedout_Time:"null"});
+        return res.send(book);
+    } catch (error) {
+        return res.status(500).send({message:error.message})
+    }
+})
+
+
+app.get("/bookchout",async(req,res)=>{
+    try {
+       // var query = req.params.query;
+        const book =await Books.find({checkedout_Time:{$not:{$eq:"null"}}});
+        return res.send(book);
+    } catch (error) {
+        return res.status(500).send({message:error.message})
+    }
+})
+
+
+
+
+
+
+
+app.get("/section",async(req,res)=>{
+    var section =await Section.find({});
+    return res.send(section);
+});
+
+app.get("/author",async (req,res)=>{
+    author =await Author.find({});
+    return res.send(author);
+})
 app.listen(6001,async()=>{
     try {
        await connectDb() 
