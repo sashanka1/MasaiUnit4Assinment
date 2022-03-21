@@ -34,6 +34,7 @@ const bookschema=mongoose.Schema(
 );
 //6234d91a514d5eb7f12df392
 //6234d9577bebcbdb90eb5849  author id
+//6235f1637bd533bd055b5466
 
 //bookid
 //6234db76b5b17699e2b0f1d3
@@ -83,10 +84,13 @@ app.post("/book",async(req,res)=>{
    
 })
 
-app.get("/book",async(req,res)=>{
+app.get("/book/:id",async(req,res)=>{
     try {
        // var query = req.params.query;
-        const book =await Books.find({outhorId:"6235f1637bd533bd055b5466"});
+        // const book =await Books.find({outhorId:"6235f1637bd533bd055b5466"});
+        // return res.send(book);
+
+        const book =await Books.find({outhorId:req.params.id});
         return res.send(book);
     } catch (error) {
         return res.status(500).send({message:error.message})
