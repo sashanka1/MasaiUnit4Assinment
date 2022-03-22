@@ -3,6 +3,8 @@ const express =require("express");
 const app =express();
 
 const usersController = require("./controllers/user.controllers");
+const studentController= require("./controllers/student.controller")
+ const batchController =require("./controllers/batch.controllers")
 
 app.use(express.json());
 
@@ -10,7 +12,9 @@ const connect =require("./configs/db")
 
 app.use("/user",usersController)
 
+app.use("student",studentController)
 
+app.use ("/batch",batchController)
 
 
 

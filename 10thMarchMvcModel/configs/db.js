@@ -7,5 +7,5 @@
 // };
 
 module.exports=()=>{
-    return mongoose.connect("mongodb+srv://sss:Hacker1mon@cluster0.lhntb.mongodb.net/school?retryWrites=true&w=majority")
+    return mongoose.connect("mongodb+srv://sss:Hacker1mon@cluster0.lhntb.mongodb.net/masaischool?retryWrites=true&w=majority")
 }
