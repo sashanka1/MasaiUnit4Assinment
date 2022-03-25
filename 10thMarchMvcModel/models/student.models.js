@@ -7,7 +7,7 @@ const studentSchima =mongoose.Schema(
        batch_id:{type:mongoose.Schema.Types.ObjectId,ref:"batch"}
 
     },{
-        timestemp:true,
+        timestamp:true,
         versionkey:false,
     }
 );

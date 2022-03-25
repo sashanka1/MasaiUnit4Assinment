@@ -16,4 +16,14 @@ app.post("/",async(req,res)=>{
 
 
 });
+
+app.get("/",async(req,res)=>{
+    try {
+        const students =await User.find().lean().exec()
+
+        res.status(200).send(students);
+    } catch (error) {
+        res.send({message:error.message});
+    }
+})
 module.exports=app;

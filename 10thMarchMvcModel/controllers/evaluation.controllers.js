@@ -10,6 +10,15 @@ app.post("/",async(req,res)=>{
     } catch (error) {
         ressend({message:error.message})
     }
+});
+
+app.get("/",async(req,res)=>{
+    try {
+        const evaluation =await Evaluation.find().lean().exec();
+        res.status(201).send(evaluation);
+    } catch (error) {
+        res.send({message:error.message});
+    }
 })
 
 module.exports=app

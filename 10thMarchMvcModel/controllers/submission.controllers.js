@@ -11,4 +11,13 @@ app.post("/",async(req,res)=>{
     }
 });
 
+app.get("/",async(req,res)=>{
+    try {
+       const submission =await Submission.find().lean().exec();
+       res.status(201).send(submission);
+    } catch (error) {
+        res.send({message:error.message})
+    }
+});
+
 module.exports=app;
